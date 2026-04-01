@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Google</title>
@@ -6,7 +6,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -19,19 +19,21 @@
         </ul>
       </nav>
     </header>
-    <div id="google">
-      <img src="Google logo.png" />
-    </div>
+    <main>
+      <div id="google">
+        <img src="Google logo.png" alt="Google logo" />
+      </div>
 
-    <div id="form">
-      <form>
-        <input id="barra_de_pesquisa" type="text" />
-      </form>
-    </div>
-    <div id="botoes">
-      <input type="submit" value="Pesquisa Google" />
-      <input type="submit" value="Estou com sorte" />
-    </div>
+      <div id="form">
+        <form method="get" action="https://www.google.com/search">
+          <input id="barra_de_pesquisa" type="text" name="q" />
+          <div id="botoes">
+            <input type="submit" value="Pesquisa Google" />
+            <input type="submit" value="Estou com sorte" name="btnI" />
+          </div>
+        </form>
+      </div>
+    </main>
 
     <footer>
       <ul id="footer_esquerdo">
@@ -50,7 +52,7 @@
           <a href="https://policies.google.com/privacy">Privacidade</a>
         </li>
         <li><a href="https://policies.google.com/terms">Termos</a></li>
-        <li><a href="#">Configuração</a></li>
+        <li><a href="#">Configurações</a></li>
       </ul>
     </footer>
   </body>

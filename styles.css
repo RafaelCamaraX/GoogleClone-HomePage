@@ -7,6 +7,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 ul {
@@ -56,32 +59,107 @@ a:hover {
 #barra_de_pesquisa {
   width: 450px;
   line-height: 30px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+#barra_de_pesquisa:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+#barra_de_pesquisa:focus {
+  border-color: #4887ef;
+  box-shadow: 0 1px 6px rgba(72, 135, 239, 0.4);
 }
 
 #botoes {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   padding-top: 30px;
+}
+
+#botoes input {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  font-size: 14px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#botoes input:hover {
+  color: #202124;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+}
+
+#botoes input:active {
+  border: 1px solid #4887ef;
 }
 
 footer {
   background-color: #f2f2f2;
-  border-top: solid 2px #e4e4e4;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  border-top: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-top: auto;
+}
+
+footer ul {
+  display: flex;
 }
 
 footer ul li {
   display: inline;
   color: #666666;
   font-size: 14px;
-  padding: 12px;
+  padding: 15px 12px;
+}
+
+footer a:hover {
+  color: #4887ef;
 }
 
 #footer_esquerdo {
-  float: left;
+  float: none;
 }
 
 #footer_direito {
-  float: right;
+  float: none;
+}
+
+@media (max-width: 600px) {
+  #barra_de_pesquisa {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  footer ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #botoes {
+    flex-direction: column;
+  }
+
+  #botoes input {
+    width: 100%;
+  }
 }
